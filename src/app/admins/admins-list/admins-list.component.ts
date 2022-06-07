@@ -25,10 +25,6 @@ export class AdminsListComponent implements OnInit {
         console.log(data);   
       }  
     })
-
-    this.adminService.getUsers().subscribe((response: any) => {
-      console.log(response);
-    })
   }
 
   create(){

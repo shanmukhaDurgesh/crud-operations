@@ -16,10 +16,6 @@ export class AdminsService {
     this.adminData.next(data);
   }
 
-  getAllSections(){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts');
-  }
-
   getAllUsers(){
     return this.http.get('https://629882c6f2decf5bb74472c7.mockapi.io/api/v1/users');
   }
@@ -40,11 +36,7 @@ export class AdminsService {
     return this.http.delete('https://629882c6f2decf5bb74472c7.mockapi.io/api/v1/users/'+id);
   }
 
-  public getUsers(): Observable<any> {
-    const url = 'https://reqres.in/api/users';
-    let queryParams = new HttpParams();
-    queryParams = queryParams.append('page', 1);
-    queryParams = queryParams.append('per_page', 5);
-    return this.http.get<any>(url, { params: queryParams });
+  getAllSections(){
+    return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
 }

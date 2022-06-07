@@ -7,19 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  param: any;
 
-  constructor(private route : ActivatedRoute, private router : Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      console.log(params);
-      this.param = params['jwt']
-    })
-  }
-
-  multipleParamsWithSameKey() {
-    this.router.navigateByUrl('/?brand=name&brand=bjk&value=1000')
   }
 
 }
