@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-primary" (click)="create()">Add Admin</button>
+<table class="table">
+    <thead class="table-light">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td><a class="nav-link" [routerLink]="['/admin/list/', user.id]">{{user.id}}</a></td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.status}}</td>
+            <td>{{user.createdAt}}</td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="update(user)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="onDelete(user.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
